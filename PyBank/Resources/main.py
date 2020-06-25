@@ -5,7 +5,19 @@ import csv
 #csvpath
 pybank_csv = os.path.join("..", "Resources", "budget_data.csv")
 
-#define, with/open csv file and define csvfile as reader
+output_path = os.path.join("..", "Analysis", "analysis.txt")
+
+#define, with/open csv file and define csvfile as writer
+with open(output_path, 'w', newline='') as outcsv:
+    csvwriter = csv.writer(outcsv)
+    csvwriter.writerow(["Financial Analysis"])
+    csvwriter.writerow(['Total Months: 86', 
+    'Total: 38382578', 
+    'Average Change: $ -2315', 
+    'Greatest Increase in Profits: Jan-2012 ($ 1926159.0 )', 
+    'Greatest Decrease in Profits: Aug-2013 ($ -2196167.0 )'])
+   
+#define, with/open csv file and define csvfile as reader    
 with open(pybank_csv, newline='') as csvfile:
     c = csv.reader(csvfile, delimiter=",")
     headers = next(c, None)
@@ -52,6 +64,9 @@ print(f'Total: ${sum(profit_loss)}')
 print("Average Revenue Change: $", round(avg_rev_change))
 print("Greatest Increase in Profits:", max_rev_change_date,"($", max_rev_change,")")
 print("Greatest Decrease in Profits:", min_rev_change_date,"($", min_rev_change,")")
+
+
+
 
 
 
