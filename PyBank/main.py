@@ -3,9 +3,9 @@ import os
 import csv
 
 #csvpath
-pybank_csv = os.path.join("..", "Resources", "budget_data.csv")
+pybank_csv = os.path.join("Resources", "budget_data.csv")
 
-output_path = os.path.join("..", "Analysis", "analysis.txt")
+output_path = os.path.join("Analysis", "analysis.txt")
 
 #define, with/open csv file and define csvfile as writer
 with open(output_path, 'w', newline='') as outcsv:
