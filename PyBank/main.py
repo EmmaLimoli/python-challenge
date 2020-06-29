@@ -33,7 +33,7 @@ with open(pybank_csv, newline='') as csvfile:
     rows = len(total_months)
     revenue = []
     date = []
-    rev_change = []
+    pro_change = []
 
     #loop through data
     for row in c:
@@ -45,14 +45,14 @@ with open(pybank_csv, newline='') as csvfile:
         profit_loss.append(int(float(row[1])))
 
     #second loop through to find avg and max/min profit
-    for i in range(1,len(revenue)):
-        rev_change.append(revenue[i] - revenue[i-1])
-        avg_rev_change = sum(rev_change) / len(rev_change)
-        max_rev_change = max(rev_change)
-        min_rev_change = min(rev_change)
+    for x in range(1,len(revenue)):
+        pro_change.append(revenue[x] - revenue[x-1])
+        avg_pro_change = sum(pro_change) / len(pro_change)
+        max_pro_change = max(pro_change)
+        min_pro_change = min(pro_change)
 
-        max_rev_change_date = str(date[rev_change.index(max(rev_change))])
-        min_rev_change_date = str(date[rev_change.index(min(rev_change))])
+        max_pro_change_date = str(date[pro_change.index(max(pro_change))])
+        min_pro_change_date = str(date[pro_change.index(min(pro_change))])
 
 #sum for profit loss/gain
 some_var
@@ -61,9 +61,9 @@ sum(profit_loss)
 #print data
 print(f'Total Months: {len(date)}')
 print(f'Total: ${sum(profit_loss)}')
-print("Average Revenue Change: $", round(avg_rev_change))
-print("Greatest Increase in Profits:", max_rev_change_date,"($", max_rev_change,")")
-print("Greatest Decrease in Profits:", min_rev_change_date,"($", min_rev_change,")")
+print("Average Revenue Change: $", round(avg_pro_change))
+print("Greatest Increase in Profits:", max_pro_change_date,"($", max_pro_change,")")
+print("Greatest Decrease in Profits:", min_pro_change_date,"($", min_pro_change,")")
 
 
 
