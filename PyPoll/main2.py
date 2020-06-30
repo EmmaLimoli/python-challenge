@@ -1,3 +1,6 @@
+#PyPoll Solutions
+#Author: Emma Limoli
+#This script expects the data called election_data.csv to be in the Resources folder
 # import OS/CSV
 import os
 import csv
@@ -53,7 +56,8 @@ with open(pypoll_csv, newline='') as csvfile:
 #percentage function
 def calculate_percentage(candidate_votes, votes):
     results = round((candidate_votes/votes)*100,2)
-    return results
+    return results 
+
 
 #print data
 print(f'Total Votes: {(total_votes)}')
@@ -61,5 +65,5 @@ print(f"Khan: {calculate_percentage(Khan, total_votes)}% ({Khan})")
 print(f"Correy: {calculate_percentage(Correy, total_votes)}% ({Correy})")
 print(f"Li: {calculate_percentage(Li, total_votes)}% ({Li})")
 print(f"O'Tooley: {calculate_percentage(OTooley,total_votes)}% ({OTooley})")
-print("Winner: Khan")
+print(f"The Winner: Khan")
 
